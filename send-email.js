@@ -2,7 +2,10 @@
 const fs = require("fs");
 const nodemailer = require("nodemailer");
 
-const template = fs.readFileSync("iibex_client_welcome.html", "utf8");
+const template = fs.readFileSync(
+  path.join(__dirname, "iibex_client_welcome.html"),
+  "utf8"
+);
 
 const clientName = process.env.CLIENT_NAME || "Client";
 const recipient = process.env.TO_EMAIL;
