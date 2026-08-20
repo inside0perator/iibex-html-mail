@@ -1,1 +1,43 @@
+name: Send IIBEX HTML Email
 
+on:
+  workflow_dispatch:
+    inputs:
+      recipient:
+        description: "Recipient email address"
+        required: true
+        type: string
+      client_name:
+        description: "Client name"
+        required: true
+        type: string
+      subject:
+        description: "Email subject"
+        required: true
+        default: "Welcome to iibex"
+        type: string
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Nodemailer
+        run: npm install nodemailer
+
+      - name: Send HTML email
+        env:
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          TO_EMAIL: ${{ inputs.recipient }}
+          CLIENT_NAME: ${{ inputs.client_name }}
+          SUBJECT: ${{ inputs.subject }}
+        run: node send-email.js
