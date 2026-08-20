@@ -27,11 +27,20 @@ const transporter = nodemailer.createTransport({
 
 async function sendEmail() {
   await transporter.sendMail({
-    from: process.env.SMTP_USER,
-    to: recipient,
-    subject: subject,
-    html: html
-  });
+  from: process.env.SMTP_USER,
+  to: recipient,
+  subject: subject,
+  html: html,
+
+  attachments: [
+    {
+      filename: "iibex_email_signature_logo_small.png",
+      path: "./iibex_email_signature_logo_small.png",
+      cid: "iibex-logo"
+    }
+  ]
+});
+    
 
   console.log(`Email sent successfully to ${recipient}`);
 }
