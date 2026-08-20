@@ -4,389 +4,206 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Welcome to IIBEX</title>
-
-<style>
-* {
-    box-sizing: border-box;
-}
-
-html, body {
-    margin: 0;
-    padding: 0;
-    min-height: 100%;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background:
-        radial-gradient(circle at 85% 15%, rgba(212,175,55,.12), transparent 30%),
-        linear-gradient(135deg, #050505 0%, #0c0c0c 45%, #15110a 100%);
-    color: #fff;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 30px 15px;
-}
-
-.container {
-    width: 100%;
-    max-width: 900px;
-    border: 1px solid rgba(212,175,55,.35);
-    border-radius: 22px;
-    overflow: hidden;
-    background: rgba(10,10,10,.94);
-    box-shadow:
-        0 30px 80px rgba(0,0,0,.65),
-        0 0 40px rgba(212,175,55,.08);
-}
-
-/* HEADER */
-
-.header {
-    position: relative;
-    padding: 42px 35px 36px;
-    text-align: center;
-    border-bottom: 1px solid rgba(212,175,55,.25);
-    background:
-        radial-gradient(circle at center, rgba(212,175,55,.10), transparent 60%);
-}
-
-.logo {
-    width: 130px;
-    height: 130px;
-    margin: 0 auto 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.logo img {
-    display: block;
-    width: 100%;
-    max-width: 130px;
-    height: auto;
-    border: 0;
-    filter: drop-shadow(0 0 12px rgba(212,175,55,.25));
-}
-
-.brand {
-    margin: 0;
-    font-size: 42px;
-    letter-spacing: 8px;
-    font-weight: 800;
-    color: #d4af37;
-}
-
-.tagline {
-    margin: 9px 0 0;
-    color: #aaa;
-    font-size: 12px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-}
-
-/* CONTENT */
-
-.content {
-    padding: 40px;
-}
-
-.welcome {
-    text-align: center;
-    margin-bottom: 35px;
-}
-
-.welcome h1 {
-    margin: 0 0 12px;
-    font-size: 30px;
-    font-weight: 700;
-}
-
-.welcome p {
-    margin: 0 auto;
-    max-width: 680px;
-    line-height: 1.8;
-    color: #bdbdbd;
-    font-size: 15px;
-}
-
-/* CARD */
-
-.card {
-    border: 1px solid rgba(212,175,55,.22);
-    border-radius: 16px;
-    padding: 25px;
-    margin-bottom: 25px;
-    background: linear-gradient(
-        145deg,
-        rgba(212,175,55,.07),
-        rgba(255,255,255,.015)
-    );
-}
-
-.card-title {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 18px;
-    color: #d4af37;
-    font-size: 17px;
-    font-weight: 700;
-}
-
-.icon {
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid rgba(212,175,55,.4);
-    color: #d4af37;
-    font-size: 15px;
-}
-
-.card p {
-    color: #b8b8b8;
-    line-height: 1.75;
-    font-size: 14px;
-    margin: 0;
-}
-
-/* DETAILS */
-
-.details {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-}
-
-.detail {
-    padding: 18px;
-    border-radius: 12px;
-    background: rgba(255,255,255,.025);
-    border: 1px solid rgba(255,255,255,.07);
-}
-
-.detail-label {
-    color: #777;
-    font-size: 10px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin-bottom: 7px;
-}
-
-.detail-value {
-    color: #eee;
-    font-size: 14px;
-    word-break: break-word;
-}
-
-.detail-value.gold {
-    color: #d4af37;
-}
-
-/* BUTTON */
-
-.button-area {
-    text-align: center;
-    margin-top: 30px;
-}
-
-.button {
-    display: inline-block;
-    padding: 15px 32px;
-    border-radius: 9px;
-    background: linear-gradient(135deg, #d4af37, #a77d16);
-    color: #080808;
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: 800;
-    letter-spacing: 1px;
-    transition: .25s ease;
-}
-
-.button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(212,175,55,.2);
-}
-
-/* FOOTER */
-
-.footer {
-    padding: 25px;
-    text-align: center;
-    border-top: 1px solid rgba(212,175,55,.15);
-    color: #666;
-    font-size: 11px;
-    line-height: 1.7;
-}
-
-.footer strong {
-    color: #d4af37;
-}
-
-/* MOBILE */
-
-@media (max-width: 650px) {
-
-    body {
-        padding: 12px;
-    }
-
-    .header {
-        padding: 32px 20px;
-    }
-
-    .logo {
-        width: 105px;
-        height: 105px;
-    }
-
-    .logo img {
-        max-width: 105px;
-    }
-
-    .brand {
-        font-size: 31px;
-        letter-spacing: 5px;
-    }
-
-    .content {
-        padding: 25px 18px;
-    }
-
-    .welcome h1 {
-        font-size: 24px;
-    }
-
-    .details {
-        grid-template-columns: 1fr;
-    }
-}
-</style>
 </head>
 
-<body>
+<body style="margin:0;padding:0;background:#050505;font-family:Arial,Helvetica,sans-serif;color:#ffffff;">
 
-<div class="container">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#050505;margin:0;padding:30px 10px;">
+<tr>
+<td align="center">
 
-    <header class="header">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:700px;background:#0c0c0c;border:1px solid #6f5a20;">
 
-        <!-- IIBEX LOGO IMAGE -->
-        <div class="logo">
-            <img
-                src="iibex_email_signature_logo_small.png"
-                alt="IIBEX Logo">
-        </div>
+<!-- HEADER -->
+<tr>
+<td align="center" style="padding:40px 25px 30px;background:#0c0c0c;border-bottom:1px solid #5c4a1c;">
 
-        <h2 class="brand">IIBEX</h2>
+<img
+src="iibex_email_signature_logo_small.png"
+alt="IIBEX"
+width="100"
+style="display:block;width:100px;height:auto;margin:0 auto 20px;border:0;">
 
-        <p class="tagline">
-            Governance • Capital • Quantitative Finance
-        </p>
-
-    </header>
-
-
-    <main class="content">
-
-        <section class="welcome">
-
-            <h1>WELCOME TO IIBEX</h1>
-
-            <p>
-                We are pleased to welcome you to IIBEX. Your client
-                relationship has been established, and you may now
-                access the services and financial solutions available
-                through our platform.
-            </p>
-
-        </section>
-
-
-        <section class="card">
-
-            <div class="card-title">
-                <span class="icon">◆</span>
-                CLIENT WELCOME
-            </div>
-
-            <p>
-                IIBEX operates across capital solutions, investment
-                services, quantitative financial markets, credit
-                solutions, debt solutions and financial education.
-                Our approach combines disciplined governance,
-                quantitative analysis and structured financial strategy.
-            </p>
-
-        </section>
-
-
-        <section class="card">
-
-            <div class="card-title">
-                <span class="icon">◇</span>
-                CLIENT DETAILS
-            </div>
-
-            <div class="details">
-
-                <div class="detail">
-                    <div class="detail-label">Organisation</div>
-                    <div class="detail-value gold">IIBEX</div>
-                </div>
-
-                <div class="detail">
-                    <div class="detail-label">Client Status</div>
-                    <div class="detail-value">Active</div>
-                </div>
-
-                <div class="detail">
-                    <div class="detail-label">Jurisdiction</div>
-                    <div class="detail-value">United Kingdom</div>
-                </div>
-
-                <div class="detail">
-                    <div class="detail-label">Email</div>
-                    <div class="detail-value">admin@iibex.co.uk</div>
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <div class="button-area">
-
-            <a
-                class="button"
-                href="https://iibex.co.uk"
-                target="_blank"
-                rel="noopener noreferrer">
-                VISIT IIBEX
-            </a>
-
-        </div>
-
-    </main>
-
-
-    <footer class="footer">
-
-        <strong>IIBEX</strong><br>
-
-        Capital Solutions • Investment • Quantitative Finance
-        • Credit • Education
-
-        <br><br>
-
-        © 2026 IIBEX. All rights reserved.
-
-    </footer>
-
+<div style="font-size:38px;line-height:44px;font-weight:bold;letter-spacing:7px;color:#d4af37;">
+IIBEX
 </div>
 
+<div style="font-size:11px;line-height:18px;letter-spacing:2px;color:#999999;text-transform:uppercase;margin-top:8px;">
+Governance • Capital • Quantitative Finance
+</div>
+
+</td>
+</tr>
+
+
+<!-- CONTENT -->
+<tr>
+<td style="padding:35px 25px;background:#0a0a0a;">
+
+<!-- WELCOME -->
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td align="center">
+
+<div style="font-size:28px;line-height:36px;font-weight:bold;color:#ffffff;">
+WELCOME TO IIBEX
+</div>
+
+<div style="height:12px;line-height:12px;font-size:12px;">
+&nbsp;
+</div>
+
+<div style="max-width:600px;margin:auto;font-size:14px;line-height:25px;color:#bdbdbd;">
+We are pleased to welcome you to IIBEX. Your client relationship has been established, and you may now access the services and financial solutions available through our platform.
+</div>
+
+</td>
+</tr>
+</table>
+
+
+<div style="height:30px;line-height:30px;font-size:30px;">
+&nbsp;
+</div>
+
+
+<!-- CLIENT WELCOME CARD -->
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #4f421c;background:#11100c;">
+<tr>
+<td style="padding:24px;">
+
+<div style="font-size:16px;line-height:24px;font-weight:bold;color:#d4af37;">
+◆ &nbsp; CLIENT WELCOME
+</div>
+
+<div style="height:14px;line-height:14px;font-size:14px;">
+&nbsp;
+</div>
+
+<div style="font-size:14px;line-height:24px;color:#b8b8b8;">
+IIBEX operates across capital solutions, investment services, quantitative financial markets, credit solutions, debt solutions and financial education. Our approach combines disciplined governance, quantitative analysis and structured financial strategy.
+</div>
+
+</td>
+</tr>
+</table>
+
+
+<div style="height:20px;line-height:20px;font-size:20px;">
+&nbsp;
+</div>
+
+
+<!-- CLIENT DETAILS CARD -->
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #4f421c;background:#11100c;">
+<tr>
+<td style="padding:24px;">
+
+<div style="font-size:16px;line-height:24px;font-weight:bold;color:#d4af37;">
+◇ &nbsp; CLIENT DETAILS
+</div>
+
+<div style="height:18px;line-height:18px;font-size:18px;">
+&nbsp;
+</div>
+
+<table width="100%" cellpadding="8" cellspacing="0" border="0">
+
+<tr>
+
+<td width="50%" valign="top" style="background:#151515;border:1px solid #252525;">
+<div style="font-size:9px;letter-spacing:1px;color:#777777;text-transform:uppercase;">
+Organisation
+</div>
+<div style="font-size:14px;color:#d4af37;margin-top:6px;">
+IIBEX
+</div>
+</td>
+
+<td width="50%" valign="top" style="background:#151515;border:1px solid #252525;">
+<div style="font-size:9px;letter-spacing:1px;color:#777777;text-transform:uppercase;">
+Client Status
+</div>
+<div style="font-size:14px;color:#eeeeee;margin-top:6px;">
+Active
+</div>
+</td>
+
+</tr>
+
+<tr>
+
+<td width="50%" valign="top" style="background:#151515;border:1px solid #252525;">
+<div style="font-size:9px;letter-spacing:1px;color:#777777;text-transform:uppercase;">
+Jurisdiction
+</div>
+<div style="font-size:14px;color:#eeeeee;margin-top:6px;">
+United Kingdom
+</div>
+</td>
+
+<td width="50%" valign="top" style="background:#151515;border:1px solid #252525;">
+<div style="font-size:9px;letter-spacing:1px;color:#777777;text-transform:uppercase;">
+Email
+</div>
+<div style="font-size:14px;color:#eeeeee;margin-top:6px;">
+admin@iibex.co.uk
+</div>
+</td>
+
+</tr>
+
+</table>
+
+</td>
+</tr>
+</table>
+
+
+<!-- BUTTON -->
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td align="center" style="padding:30px 0 10px;">
+
+<a
+href="https://iibex.co.uk"
+style="display:inline-block;padding:14px 30px;background:#d4af37;color:#080808;text-decoration:none;font-size:12px;font-weight:bold;letter-spacing:1px;border-radius:5px;">
+VISIT IIBEX
+</a>
+
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+
+
+<!-- FOOTER -->
+<tr>
+<td align="center" style="padding:25px 20px;background:#080808;border-top:1px solid #3e3519;color:#666666;font-size:10px;line-height:18px;">
+
+<strong style="color:#d4af37;">
+IIBEX
+</strong>
+
+<br>
+
+Capital Solutions • Investment • Quantitative Finance
+• Credit • Education
+
+<br><br>
+
+© 2026 IIBEX. All rights reserved.
+
+</td>
+</tr>
+
+</table>
+
+</td>
+</tr>
+</table>
+
 </body>
-            </html>
+</html>
